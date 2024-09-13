@@ -1,0 +1,67 @@
+<ForceField>
+ <AtomTypes>
+  <Type name="E1" class="E1" element="H" mass="1.00794"/>
+  <Type name="E2" class="E2" element="H" mass="1.00794"/>
+  <Type name="E3" class="E3" element="C" mass="12.011"/>
+  <Type name="E4" class="E4" element="C" mass="12.011"/>
+  <Type name="E5" class="E5" element="O" mass="15.9994"/>
+ </AtomTypes>
+ <Residues>
+  <Residue name='AAA'>
+  <Atom name="C1" type="E4"/>
+  <Atom name="C2" type="E3"/>
+  <Atom name="C3" type="E4"/>
+  <Atom name="C4" type="E4"/>
+  <Atom name="O5" type="E5"/>
+  <Atom name="H6" type="E1"/>
+  <Atom name="H7" type="E1"/>
+  <Atom name="H8" type="E1"/>
+  <Atom name="H9" type="E1"/>
+  <Atom name="H10" type="E1"/>
+  <Atom name="H11" type="E1"/>
+  <Atom name="H12" type="E1"/>
+  <Atom name="H13" type="E1"/>
+  <Atom name="H14" type="E1"/>
+  <Atom name="H15" type="E2"/>
+   <Bond atomName1="C2" atomName2="C1"/>
+   <Bond atomName1="H6" atomName2="C1"/>
+   <Bond atomName1="H7" atomName2="C1"/>
+   <Bond atomName1="H8" atomName2="C1"/>
+   <Bond atomName1="C2" atomName2="C3"/>
+   <Bond atomName1="C2" atomName2="C4"/>
+   <Bond atomName1="C2" atomName2="O5"/>
+   <Bond atomName1="H9" atomName2="C3"/>
+   <Bond atomName1="H10" atomName2="C3"/>
+   <Bond atomName1="H11" atomName2="C3"/>
+   <Bond atomName1="H12" atomName2="C4"/>
+   <Bond atomName1="H13" atomName2="C4"/>
+   <Bond atomName1="H14" atomName2="C4"/>
+   <Bond atomName1="H15" atomName2="O5"/>
+  </Residue>
+ </Residues>
+ <HarmonicBondForce>
+  <Bond class1="E1" class2="E4" length="0.10917790000000001" k="319439.806064"/>
+  <Bond class1="E2" class2="E5" length="0.0959034" k="505087.1102544"/>
+  <Bond class1="E3" class2="E4" length="0.1522615" k="241602.14868960003"/>
+  <Bond class1="E3" class2="E5" length="0.14251370000000002" k="265643.37336"/>
+ </HarmonicBondForce>
+ <HarmonicAngleForce>
+  <Angle class1="E1" class2="E4" class3="E1" angle="1.8879970378149864" k="328.44884507200004"/>
+  <Angle class1="E1" class2="E4" class3="E3" angle="1.9150142284903755" k="438.15253848"/>
+  <Angle class1="E2" class2="E5" class3="E3" angle="1.854779896584445" k="368.012874592"/>
+  <Angle class1="E4" class2="E3" class3="E4" angle="1.9397235179359746" k="529.629983136"/>
+  <Angle class1="E4" class2="E3" class3="E5" angle="1.899606514213647" k="668.793940192"/>
+ </HarmonicAngleForce>
+ <PeriodicTorsionForce>
+  <Proper k1="0.431782524" k2="0.152251576" k3="1.7899486720000002" k4="-0.030252412" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793" type1="E1" type2="E4" type3="E3" type4="E4"/>
+  <Proper k1="-1.307399584" k2="-0.479137036" k3="-1.0913210880000002" k4="-0.11055801600000001" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793" type1="E1" type2="E4" type3="E3" type4="E5"/>
+  <Proper k1="0.040120376000000006" k2="-0.14155518" k3="0.871135996" k4="-0.5793919519999999" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793" type1="E2" type2="E5" type3="E3" type4="E4"/>
+ </PeriodicTorsionForce>
+ <NonbondedForce coulomb14scale="0.0" lj14scale="0.0">
+  <Atom type="E1" charge="0.028569" sigma="0.2445635" epsilon="0.10238248"/>
+  <Atom type="E2" charge="0.402573" sigma="0.1779072" epsilon="0.004184"/>
+  <Atom type="E3" charge="0.635865" sigma="0.3837234" epsilon="0.39435873600000004"/>
+  <Atom type="E4" charge="-0.191064" sigma="0.3345888" epsilon="0.49827674400000005"/>
+  <Atom type="E5" charge="-0.722367" sigma="0.3051656" epsilon="0.313641008"/>
+ </NonbondedForce>
+</ForceField>

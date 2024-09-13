@@ -1,0 +1,99 @@
+<ForceField>
+ <AtomTypes>
+  <Type name="E1" class="E1" element="S" mass="32.066"/>
+  <Type name="E2" class="E2" element="D" mass="2.01355321270"/>
+  <Type name="E3" class="E3" element="D" mass="2.01355321270"/>
+  <Type name="E4" class="E4" element="D" mass="2.01355321270"/>
+  <Type name="E5" class="E5" element="D" mass="2.01355321270"/>
+  <Type name="E6" class="E6" element="C" mass="12.011"/>
+  <Type name="E7" class="E7" element="C" mass="12.011"/>
+  <Type name="E8" class="E8" element="C" mass="12.011"/>
+  <Type name="E9" class="E9" element="C" mass="12.011"/>
+ </AtomTypes>
+ <Residues>
+  <Residue name='AAA'>
+  <Atom name="C1" type="E7"/>
+  <Atom name="C2" type="E6"/>
+  <Atom name="C3" type="E9"/>
+  <Atom name="D4" type="E5"/>
+  <Atom name="D5" type="E5"/>
+  <Atom name="C6" type="E8"/>
+  <Atom name="D7" type="E5"/>
+  <Atom name="D8" type="E5"/>
+  <Atom name="D9" type="E4"/>
+  <Atom name="D10" type="E4"/>
+  <Atom name="D11" type="E4"/>
+  <Atom name="S12" type="E1"/>
+  <Atom name="D13" type="E3"/>
+  <Atom name="D14" type="E3"/>
+  <Atom name="D15" type="E2"/>
+   <Bond atomName1="C2" atomName2="C1"/>
+   <Bond atomName1="S12" atomName2="C1"/>
+   <Bond atomName1="D13" atomName2="C1"/>
+   <Bond atomName1="D14" atomName2="C1"/>
+   <Bond atomName1="C2" atomName2="C3"/>
+   <Bond atomName1="D4" atomName2="C2"/>
+   <Bond atomName1="D5" atomName2="C2"/>
+   <Bond atomName1="C6" atomName2="C3"/>
+   <Bond atomName1="D7" atomName2="C3"/>
+   <Bond atomName1="D8" atomName2="C3"/>
+   <Bond atomName1="D9" atomName2="C6"/>
+   <Bond atomName1="D10" atomName2="C6"/>
+   <Bond atomName1="D11" atomName2="C6"/>
+   <Bond atomName1="S12" atomName2="D15"/>
+  </Residue>
+ </Residues>
+ <HarmonicBondForce>
+  <Bond class1="E1" class2="E2" length="0.133749" k="260506.00544640003"/>
+  <Bond class1="E1" class2="E7" length="0.1817071" k="183793.049112"/>
+  <Bond class1="E3" class2="E7" length="0.1091278" k="317514.8095872"/>
+  <Bond class1="E4" class2="E8" length="0.10931550000000001" k="316181.73697920004"/>
+  <Bond class1="E5" class2="E6" length="0.1095124" k="310616.2546544"/>
+  <Bond class1="E5" class2="E9" length="0.109558" k="308350.90567680006"/>
+  <Bond class1="E6" class2="E7" length="0.15212710000000002" k="258231.8223712"/>
+  <Bond class1="E6" class2="E9" length="0.1523784" k="256525.77879840002"/>
+  <Bond class1="E8" class2="E9" length="0.15226599999999998" k="262363.4880624"/>
+ </HarmonicBondForce>
+ <HarmonicAngleForce>
+  <Angle class1="E1" class2="E7" class3="E3" angle="1.9100554513794865" k="376.925497504"/>
+  <Angle class1="E1" class2="E7" class3="E6" angle="1.9141823696622897" k="493.955784944"/>
+  <Angle class1="E2" class2="E1" class3="E7" angle="1.6983880807098737" k="438.685236992"/>
+  <Angle class1="E3" class2="E7" class3="E3" angle="1.8918018730376263" k="345.176184192"/>
+  <Angle class1="E3" class2="E7" class3="E6" angle="1.9183750868578933" k="359.45237712"/>
+  <Angle class1="E4" class2="E8" class3="E4" angle="1.8757364139789912" k="347.712541728"/>
+  <Angle class1="E4" class2="E8" class3="E9" angle="1.9349850537365654" k="360.13294656000005"/>
+  <Angle class1="E5" class2="E6" class3="E5" angle="1.8578543464217108" k="361.995437424"/>
+  <Angle class1="E5" class2="E6" class3="E7" angle="1.910969567575219" k="392.177248608"/>
+  <Angle class1="E5" class2="E6" class3="E9" angle="1.9078063851987819" k="370.906738192"/>
+  <Angle class1="E5" class2="E9" class3="E5" angle="1.850226437285747" k="365.0860076"/>
+  <Angle class1="E5" class2="E9" class3="E6" angle="1.9030810109687621" k="371.285289776"/>
+  <Angle class1="E5" class2="E9" class3="E8" angle="1.916094046245292" k="377.89934024"/>
+  <Angle class1="E6" class2="E9" class3="E8" angle="1.9695321533104186" k="460.393084192"/>
+  <Angle class1="E7" class2="E6" class3="E9" angle="1.9571548018540506" k="468.266937056"/>
+ </HarmonicAngleForce>
+ <PeriodicTorsionForce>
+  <Proper k1="-0.299727116" k2="1.5287854840000001" k3="0.408544588" k4="-2.2028948280000002" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793" type1="E1" type2="E7" type3="E6" type4="E5"/>
+  <Proper k1="-0.218413168" k2="3.298870616" k3="0.458840452" k4="-1.2007849879999999" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793" type1="E1" type2="E7" type3="E6" type4="E9"/>
+  <Proper k1="0.33373676" k2="0.294576612" k3="1.0284585800000001" k4="-0.1767217" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793" type1="E2" type2="E1" type3="E7" type4="E3"/>
+  <Proper k1="-1.503411616" k2="-1.17173966" k3="0.777014824" k4="-0.143318736" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793" type1="E2" type2="E1" type3="E7" type4="E6"/>
+  <Proper k1="0.09687006000000001" k2="-2.14741708" k3="0.935655368" k4="-0.04584618" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793" type1="E3" type2="E7" type3="E6" type4="E5"/>
+  <Proper k1="-0.17981786000000002" k2="1.054142064" k3="0.979543436" k4="1.9062408600000003" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793" type1="E3" type2="E7" type3="E6" type4="E9"/>
+  <Proper k1="0.25113414" k2="-0.08867151200000001" k3="0.47443003600000005" k4="-0.030185468000000003" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793" type1="E4" type2="E8" type3="E9" type4="E5"/>
+  <Proper k1="-0.562589008" k2="-0.129091044" k3="1.018006948" k4="-0.039390268" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793" type1="E4" type2="E8" type3="E9" type4="E6"/>
+  <Proper k1="0.213999048" k2="-2.4092978240000003" k3="0.8577116320000001" k4="-0.25431188800000004" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793" type1="E5" type2="E6" type3="E9" type4="E5"/>
+  <Proper k1="-0.420061048" k2="1.5906082680000002" k3="1.2039229880000002" k4="0.930986024" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793" type1="E5" type2="E6" type3="E9" type4="E8"/>
+  <Proper k1="-0.479237452" k2="1.563897612" k3="0.212310804" k4="-1.0478848920000001" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793" type1="E5" type2="E9" type3="E6" type4="E7"/>
+  <Proper k1="0.020788204" k2="4.017686" k3="0.487973644" k4="-0.35803324799999997" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793" type1="E7" type2="E6" type3="E9" type4="E8"/>
+ </PeriodicTorsionForce>
+ <NonbondedForce coulomb14scale="0.0" lj14scale="0.0">
+  <Atom type="E1" charge="-0.348156" sigma="0.3527685" epsilon="1.585815496"/>
+  <Atom type="E2" charge="0.18346" sigma="0.24692189999999997" epsilon="0.014953616"/>
+  <Atom type="E3" charge="0.049605" sigma="0.250029" epsilon="0.015882464"/>
+  <Atom type="E4" charge="0.028569" sigma="0.2445635" epsilon="0.10238248"/>
+  <Atom type="E5" charge="0.014044" sigma="0.24419059999999998" epsilon="0.059136656"/>
+  <Atom type="E6" charge="0.015803" sigma="0.3436137" epsilon="0.687895624"/>
+  <Atom type="E7" charge="0.021595" sigma="0.34727990000000003" epsilon="0.826637064"/>
+  <Atom type="E8" charge="-0.107906" sigma="0.335283" epsilon="0.583253784"/>
+  <Atom type="E9" charge="-0.005889" sigma="0.3366672" epsilon="0.6375244480000001"/>
+ </NonbondedForce>
+</ForceField>

@@ -1,0 +1,45 @@
+<ForceField>
+ <AtomTypes>
+  <Type name="E1" class="E1" element="H" mass="1.00794"/>
+  <Type name="E2" class="E2" element="C" mass="12.011"/>
+  <Type name="E3" class="E3" element="O" mass="15.9994"/>
+ </AtomTypes>
+ <Residues>
+  <Residue name='AAA'>
+  <Atom name="C1" type="E2"/>
+  <Atom name="O2" type="E3"/>
+  <Atom name="C3" type="E2"/>
+  <Atom name="H4" type="E1"/>
+  <Atom name="H5" type="E1"/>
+  <Atom name="H6" type="E1"/>
+  <Atom name="H7" type="E1"/>
+  <Atom name="H8" type="E1"/>
+  <Atom name="H9" type="E1"/>
+   <Bond atomName1="C1" atomName2="O2"/>
+   <Bond atomName1="H4" atomName2="C1"/>
+   <Bond atomName1="H5" atomName2="C1"/>
+   <Bond atomName1="H6" atomName2="C1"/>
+   <Bond atomName1="C3" atomName2="O2"/>
+   <Bond atomName1="H7" atomName2="C3"/>
+   <Bond atomName1="H8" atomName2="C3"/>
+   <Bond atomName1="H9" atomName2="C3"/>
+  </Residue>
+ </Residues>
+ <HarmonicBondForce>
+  <Bond class1="E1" class2="E2" length="0.1098824" k="301729.68885760003"/>
+  <Bond class1="E2" class2="E3" length="0.14001999999999998" k="313917.6607744"/>
+ </HarmonicBondForce>
+ <HarmonicAngleForce>
+  <Angle class1="E1" class2="E2" class3="E1" angle="1.8897862271910832" k="340.13172785600005"/>
+  <Angle class1="E1" class2="E2" class3="E3" angle="1.8831602243122267" k="494.468015328"/>
+  <Angle class1="E2" class2="E3" class3="E2" angle="1.9430080705085955" k="549.91165536"/>
+ </HarmonicAngleForce>
+ <PeriodicTorsionForce>
+  <Proper k1="0.191589544" k2="-0.5484993880000001" k3="1.699448752" k4="-0.506563156" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793" type1="E1" type2="E2" type3="E3" type4="E2"/>
+ </PeriodicTorsionForce>
+ <NonbondedForce coulomb14scale="0.0" lj14scale="0.0">
+  <Atom type="E1" charge="0.031932" sigma="0.2470287" epsilon="0.027292232000000003"/>
+  <Atom type="E2" charge="0.049451" sigma="0.3366963" epsilon="0.912639184"/>
+  <Atom type="E3" charge="-0.290493" sigma="0.2872992" epsilon="0.521615096"/>
+ </NonbondedForce>
+</ForceField>
