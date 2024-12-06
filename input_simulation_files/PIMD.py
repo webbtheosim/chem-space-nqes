@@ -7,10 +7,11 @@ from openmm.app.internal.unitcell import computeLengthsAndAngles
 import re
 import numpy as np
 from scipy.stats import sem
-from openmmtools import integrators
 import time
 
 start = time.time()
+
+P = 32
 
 TIMESTEP = 0.0005 # in picoseconds
 TEMPERATURE = 298.15 # Kelvin
@@ -72,14 +73,14 @@ post_anneal = time.time()
 print('Anneal: {:.3f} s'.format(post_anneal-post_minimize))
 #####
 
-##### NPT Equilibration & Data Collection
+##### NPT Equilibration
 system = FF.createSystem(topology=PDB.topology, nonbondedMethod=PME,nonbondedCutoff=14*angstrom,removeCMMotion=True)
-system.addForce(MonteCarloBarostat(PRESSURE*bar,TEMPERATURE*kelvin,25))
 system = WH.WaldmanHagler_LJ(system)
 
-integrator = LangevinIntegrator(TEMPERATURE*kelvin,1/picosecond,TIMESTEP*picoseconds)
+integrator = RPMDIntegrator(P,TEMPERATURE*kelvin, 1/picosecond, TIMESTEP*picoseconds)
+barostat = RPMDMonteCarloBarostat(PRESSURE*bar,25)
+system.addForce(barostat)
 simulation = Simulation(topology=PDB.topology, system=system, integrator=integrator, platform=platform, platformProperties=properties)
-
 simulation.context.setPositions(annealed_positions)
 simulation.context.setVelocities(annealed_velocities)
 
@@ -87,13 +88,38 @@ simulation.step(steps=6000000) # 3 ns NPT equilibration
 
 post_equil = time.time()
 print('Equilibration: {:.3f} s'.format(post_equil-post_anneal))
+#####
 
-simulation.reporters.append(PDBReporter('trajectory.lammpstrj',PRINT_VELOCITIES,COORDS_FREQ))
-simulation.reporters.append(StateDataReporter(False,"thermo.avg", THERMO_FREQ, step=True, time=True, density=True, totalEnergy=True, kineticEnergy=True, volume=True, potentialEnergy=True, temperature=True))
-simulation.step(steps=20000000) # 10 ns NPT data collection
+##### NPT Data Collection
+system = FF.createSystem(topology=PDB.topology, nonbondedMethod=PME,nonbondedCutoff=14*angstrom,removeCMMotion=True)
+system.addForce(RPMDMonteCarloBarostat(PRESSURE*bar,25))
+system = WH.WaldmanHagler_LJ(system)
+
+state = dict()
+for i in range(P):
+    state[i] = simulation.integrator.getState(i,getPositions=True,getVelocities=True,enforcePeriodicBox=True)
+vectors = state[0].getPeriodicBoxVectors()
+
+integrator2 = RPMDIntegrator(P,TEMPERATURE*kelvin, 1/picosecond, TIMESTEP*picoseconds)
+simulation2 = Simulation(topology=PDB.topology, system=system, integrator=integrator2, platform=platform, platformProperties=properties)
+simulation2.context.setPeriodicBoxVectors(vectors[0],vectors[1],vectors[2])
+
+simulation2.reporters.append(pdbreporter.RPMDReporter('trajectory.lammpstrj',PRINT_VELOCITIES,COORDS_FREQ))
+simulation2.reporters.append(StateDataReporter(True,"thermo.avg", THERMO_FREQ, step=True, time=True, density=True, totalEnergy=True, kineticEnergy=True, volume=True, potentialEnergy=True, temperature=True))
+
+for i in range(P):
+    simulation2.integrator.setPositions(i,state[i].getPositions())
+    simulation2.integrator.setVelocities(i,state[i].getVelocities())
+
+output_file = open('QKE.data','w')
+totalPE = []
+for i in range(int(20000000/2000)): # 10 ns NPT data collection
+    simulation2.step(steps=2000)
+    totalPE.append(simulation2.integrator.getTotalEnergy().value_in_unit(kilojoules_per_mole))
+output_file.write('QKE = {}'.format(str(totalPE)))
 
 post_data = time.time()
 print('Data Collection: {:.3f} s'.format(post_data-post_equil))
 #####
 
-Restart.save_simulation('classical.save',simulation,'classical')
+Restart.save_simulation('rpmd.save',simulation2,P)
