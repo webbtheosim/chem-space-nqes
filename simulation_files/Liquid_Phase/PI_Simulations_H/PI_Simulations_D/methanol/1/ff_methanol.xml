@@ -1,0 +1,42 @@
+<ForceField>
+ <AtomTypes>
+  <Type name="E1" class="E1" element="D" mass="2.01355321270"/>
+  <Type name="E2" class="E2" element="D" mass="2.01355321270"/>
+  <Type name="E3" class="E3" element="C" mass="12.011"/>
+  <Type name="E4" class="E4" element="O" mass="15.9994"/>
+ </AtomTypes>
+ <Residues>
+  <Residue name='AAA'>
+  <Atom name="C1" type="E3"/>
+  <Atom name="O2" type="E4"/>
+  <Atom name="D3" type="E1"/>
+  <Atom name="D4" type="E1"/>
+  <Atom name="D5" type="E1"/>
+  <Atom name="D6" type="E2"/>
+   <Bond atomName1="C1" atomName2="O2"/>
+   <Bond atomName1="D3" atomName2="C1"/>
+   <Bond atomName1="D4" atomName2="C1"/>
+   <Bond atomName1="D5" atomName2="C1"/>
+   <Bond atomName1="D6" atomName2="O2"/>
+  </Residue>
+ </Residues>
+ <HarmonicBondForce>
+  <Bond class1="E1" class2="E3" length="0.10961030000000001" k="307025.4772368"/>
+  <Bond class1="E2" class2="E4" length="0.0957501" k="512305.6123200001"/>
+  <Bond class1="E3" class2="E4" length="0.1411527" k="308536.4644032"/>
+ </HarmonicBondForce>
+ <HarmonicAngleForce>
+  <Angle class1="E1" class2="E3" class3="E1" angle="1.8885339534527774" k="342.474349456"/>
+  <Angle class1="E1" class2="E3" class3="E4" angle="1.958820247386181" k="513.19868712"/>
+  <Angle class1="E2" class2="E4" class3="E3" angle="1.8979004897764074" k="417.33767403200005"/>
+ </HarmonicAngleForce>
+ <PeriodicTorsionForce>
+  <Proper k1="0.220526088" k2="-0.430828572" k3="0.779452004" k4="-0.14823912000000003" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793" type1="E1" type2="E3" type3="E4" type4="E2"/>
+ </PeriodicTorsionForce>
+ <NonbondedForce coulomb14scale="0.0" lj14scale="0.0">
+  <Atom type="E1" charge="0.031932" sigma="0.2470287" epsilon="0.027292232000000003"/>
+  <Atom type="E2" charge="0.402573" sigma="0.1779072" epsilon="0.004184"/>
+  <Atom type="E3" charge="0.099454" sigma="0.3445715" epsilon="0.8921543200000001"/>
+  <Atom type="E4" charge="-0.597823" sigma="0.29013300000000003" epsilon="0.8399882080000001"/>
+ </NonbondedForce>
+</ForceField>
