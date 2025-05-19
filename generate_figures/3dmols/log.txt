@@ -1,0 +1,34 @@
+ PyMOL(TM) Molecular Graphics System, Version 3.1.0.
+ Copyright (c) Schrodinger, LLC.
+ All Rights Reserved.
+ 
+    Created by Warren L. DeLano, Ph.D. 
+ 
+    PyMOL is user-supported open-source software.  Although some versions
+    are freely available, PyMOL is not in the public domain.
+ 
+    If PyMOL is helpful in your work or study, then please volunteer 
+    support for our ongoing efforts to create open and affordable scientific
+    software by purchasing a PyMOL Maintenance and/or Support subscription.
+
+    More information can be found at "http://www.pymol.org".
+ 
+    Enter "help" for a list of commands.
+    Enter "help <command-name>" for information on a specific command.
+
+ Hit ESC anytime to toggle between text and graphics.
+
+ CmdLoad: "mol_0.mol" loaded as "mol_0".
+ Executive: Colored 3 atoms.
+ Executive: Colored 4 atoms.
+ Setting: depth_cue set to off.
+ Executive: Colored 4 atoms.
+ Executive: Colored 3 atoms.
+ Setting: depth_cue set to off in object "mol_0".
+ Setting-Warning: 'depth_cue' is a global-level setting
+ Setting: transparency set to 0.00000 in object "mol_0".
+ Setting: sphere_transparency set to 0.00000 in object "mol_0".
+ Setting: stick_transparency set to 0.00000 in object "mol_0".
+ Setting: sphere_scale set to 0.25000 in object "mol_0".
+ Ray: render time: 0.80 sec. = 4517.0 frames/hour (0.80 sec. accum.).
+ ScenePNG: wrote 7500x4000 pixel image to file "images/mol_0.png".

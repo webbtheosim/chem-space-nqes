@@ -570,8 +570,8 @@ for FEATURE_INDEX in range(len(TRAIN_FEATURES+['classical_alpha'])):
         SHAP_plot = ax.scatter(shap_list[FEATURE_INDEX][index], 
                               SHAP_y[FEATURE_INDEX]+np.random.uniform(-0.65, 0.65), 
                               c=shap_value_list[FEATURE_INDEX][index],
-                              vmin=min(shap_value_list[FEATURE_INDEX]),
-                              vmax=max(shap_value_list[FEATURE_INDEX]),
+                              vmin=-2,
+                              vmax=2,
                               cmap=cmap, s=120, clip_on=False)
 
 # Add colorbar
